@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="jquery-1.9.1.min.js"></script>
+</head>
+
+<body>
+
+
+
+<div>Inspect Me
+	<div id="cust-attr" data-param='{"name":"hari","age":20}'></div>
+</div>
+<button onClick="GetAttribute()">Get Attribute</button>
+<button onClick="ChangeAttribute()">Change Attribute</button>
+
+<ul id="result"></ul>
+
+
+<script>
+
+
+
+function GetAttribute(){
+	var val=$('#cust-attr').data('param');
+	var str='<li>Name : '+val.name+'</li><li>Age : '+val.age+'</li>';
+	$('#result').html(str);	
+}
+
+function ChangeAttribute(){
+	$('#cust-attr').data('param',{"name":"Ram","age":30});
+	GetAttribute();
+}
+
+</script>
+
+</body>
+</html>
